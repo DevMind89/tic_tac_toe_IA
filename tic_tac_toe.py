@@ -49,12 +49,12 @@ def player_click(index):
         buttons[index].config(text="X", state=tk.DISABLED)
         board[index] = "X"
         if evaluate(board) == "X":
-            messagebox.showinfo("Tic Tac Toe", "Has ganado.")
+            messagebox.showinfo("Tic Tac Toe", "You win!.")
             root.destroy()
         elif evaluate(board) is None:
             ai_move()
         else:
-            messagebox.showinfo("Tic Tac Toe", "Empate.")
+            messagebox.showinfo("Tic Tac Toe", "Draw.")
             root.destroy()
 
 def ai_move():
@@ -73,7 +73,7 @@ def ai_move():
         board[best_move] = "O"
         buttons[best_move].config(text="O", state=tk.DISABLED)
         if evaluate(board) == "O":
-            messagebox.showinfo("Tic Tac Toe", "La máquina ha ganado.")
+            messagebox.showinfo("Tic Tac Toe", "You loose!.")
             root.destroy()
 
 root = tk.Tk()
